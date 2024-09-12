@@ -14,13 +14,9 @@ const PORT = process.env.PORT || 5001;
 const account = require('./services/account')
 
 require('dotenv').config();
-// Middleware
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: true}));
+
 
 app.use(express.json());
-// Routes
-//app.use('/api/auth', authRoutes);
 app.use(
     cors({
       origin: ["http://localhost:8080"],
@@ -33,33 +29,12 @@ app.use('/api/account', accountRoute)
 app.use('/api/order', order)
 app.use('/api/order', position)
 
-//mongodb+srv://akanowo:<password>@cluster0.hhb0mu2.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-  // MongoDB Connection
 mongoose.connect(process.env.MONGO_DB_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 })
 .then(() => console.log('MongoDB Connected'))
 .catch(err => console.log(err));
-
-// import testalpacadocs from '@api/testalpacadocs';
-// const testalpacadocs = require('@api/testalpacadocs');
-
-
-// testalpacadocs.auth('CKIX2GMEYV5BNSJ4XYEA', 'pNscScSDVwPwroFawwJ2uhRFF7qlAhzlhWoriRVm');
-// testalpacadocs.getAllAccounts()
-//   .then(({ data }) => console.log(data))
-//   .catch(err => console.error(err));
-// const axios = require('axios');
-
-// const options = {
-//   method: 'GET',
-//   url: 'https://broker-api.sandbox.alpaca.markets/v1/accounts',
-//   headers: {
-//     accept: 'application/json',
-//     authorization: 'Basic Q0tJWDJHTUVZVjVCTlNKNFhZRUE6cE5zY1NjU0RWd1B3cm9GYXd3SjJ1aFJGRjdxbEFoemxoV29yaVJWbQ=='
-//   }
-// };
 
 const axios = require('axios');
 
