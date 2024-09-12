@@ -18,9 +18,11 @@ require('dotenv').config();
 
 app.use(express.json());
 
-app.get("/" ,(req, res) => {
-  res.json("Hello");
-})
+// Routes
+app.get('/', (req, res) => {
+  res.json('Hello');
+});
+
 app.use(
     cors({
       origin: ["http://localhost:8080"],
