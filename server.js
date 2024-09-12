@@ -24,21 +24,6 @@ app.get("/", (req, res) => {
     <html>
       <head>
         <title>Awesome Project</title>
-        <style>
-          body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-            font-family: Arial, sans-serif;
-          }
-          h1 {
-            color: #333;
-            font-size: 48px;
-          }
-        </style>
       </head>
       <body>
         <h1>Awesome Project</h1>
@@ -46,7 +31,6 @@ app.get("/", (req, res) => {
     </html>
   `);
 });
-
 
 app.use(
     cors({
@@ -120,7 +104,6 @@ const options = {
           ip_address: "185.13.21.99"
         }
       ]
-    
   }
 };
 
