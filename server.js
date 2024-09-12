@@ -17,6 +17,10 @@ require('dotenv').config();
 
 
 app.use(express.json());
+
+app.get("/" ,(req, res) => {
+  res.json("Hello");
+})
 app.use(
     cors({
       origin: ["http://localhost:8080"],
@@ -93,63 +97,8 @@ const options = {
   }
 };
 
-// axios
-//   .request(options)
-//   .then(function (response) {
-//     console.log(response.data);
-//   })
-//   .catch(function (error) {
-//     console.error(error);
-//     throw new Error(error.message)
-//   });
 
-//account.createBankRelationship()
-// account.createACHRelationship()
-// account.getACHRelationships()
-// account.fundAccount()
 
-// axios
-//   .request(options)
-//   .then(function (response) {
-//     console.log(response.data);
-//   })
-//   .catch(function (error) {
-//     console.error(error);
-//   });
-
-// (async function() {
-//   try {
-//     const response = await axios.post(
-//       'https://api.flutterwave.com/v3/payments',
-//       {
-//         tx_ref: '96b48433f4b640a498e5973ae8565ed2',
-//         amount: '7500',
-//         currency: 'NGN',
-//         redirect_url: 'http://137.184.112.174:3000/payment',
-//         customer: {
-//           email: 'falodave11@gmail.com',
-//           name: 'FALOLA DAVID OLAMIDE',
-//           phonenumber: '+2347053699331'
-//         },
-//         customizations: {
-//           title: 'Flutterwave Standard Payment'
-//         }
-//       },
-//       {
-//         headers: {
-//           Authorization: `Bearer FLWSECK_TEST-3ee35dbbf9da7971efd4924eba28301f-X`,
-//           'Content-Type': 'application/json'
-//         }
-//       }
-//     );
-//   } catch (err) {
-//     console.error(err.code);
-//     console.error(err.response.data);
-//   }
-//     console.log("This function runs immediately!");
-// })();
-
- 
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
 });
