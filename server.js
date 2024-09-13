@@ -20,11 +20,13 @@ app.use(express.json());
 
 // Routes
 app.use(
-    cors({
-      origin: ["http://localhost:8080"],
-      methods: "GET,POST,PUT,DELETE,OPTIONS",
-    })
-  );
+  cors({
+ 
+    origin: ["https://abcool20999.github.io/abetrades/","http://localhost:8080"],
+
+    methods: "GET,POST,PUT,DELETE,OPTIONS",
+  })
+);
 
 app.use('/api/auth', auth)
 app.use('/api/account', accountRoute)
@@ -32,11 +34,11 @@ app.use('/api/order', order)
 app.use('/api/order', position)
 
 mongoose.connect(process.env.MONGO_DB_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
 })
-.then(() => console.log('MongoDB Connected'))
-.catch(err => console.log(err));
+  .then(() => console.log('MongoDB Connected'))
+  .catch(err => console.log(err));
 
 const axios = require('axios');
 
@@ -49,14 +51,14 @@ const options = {
     authorization: 'Basic Q0tJWDJHTUVZVjVCTlNKNFhZRUE6cE5zY1NjU0RWd1B3cm9GYXd3SjJ1aFJGRjdxbEFoemxoV29yaVJWbQ=='
   },
   data: {
-    contact:{
-      email_address:"abraha999@gmail.com",
-      phone_number:"",
-      street_address:"Lekki",
-      unit:"5",
-      city:"Ontario",
-      state:"AK",
-      postal_code:"876328",
+    contact: {
+      email_address: "abraha999@gmail.com",
+      phone_number: "",
+      street_address: "Lekki",
+      unit: "5",
+      city: "Ontario",
+      state: "AK",
+      postal_code: "876328",
     },
     identity: {
       tax_id: "753-45-6389",
@@ -73,20 +75,20 @@ const options = {
       is_politically_exposed: true,
       immediate_family_exposed: true
     },
-    agreements: 
+    agreements:
       [
         {
-          agreement : "account_agreement",
+          agreement: "account_agreement",
           signed_at: "2024-07-07T18:06:05Z",
           ip_address: "185.13.21.99"
         },
         {
-          agreement :  "customer_agreement",
+          agreement: "customer_agreement",
           signed_at: "2024-07-07T18:06:05Z",
           ip_address: "185.13.21.99"
         },
         {
-          agreement : "margin_agreement",
+          agreement: "margin_agreement",
           signed_at: "2024-07-07T18:06:05Z",
           ip_address: "185.13.21.99"
         }
@@ -97,5 +99,5 @@ const options = {
 
 
 app.listen(PORT, () => {
-    console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
