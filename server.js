@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(
   cors({
  
-    origin: ["https://abcool20999.github.io","http://localhost:8080"],
+    origin: ["https://abcool20999.github.io","https://abetrades-z9wj.vercel.app","http://localhost:8080"],
 
     methods: "GET,POST,PUT,DELETE,OPTIONS",
   })
