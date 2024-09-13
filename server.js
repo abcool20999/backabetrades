@@ -19,19 +19,6 @@ require('dotenv').config();
 app.use(express.json());
 
 // Routes
-app.get("/", (req, res) => {
-  res.send(`
-    <html>
-      <head>
-        <title>Awesome Project</title>
-      </head>
-      <body>
-        <h1>Awesome Project</h1>
-      </body>
-    </html>
-  `);
-});
-
 app.use(
     cors({
       origin: ["http://localhost:8080"],
