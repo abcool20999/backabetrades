@@ -31,14 +31,7 @@ const UserSchema = new mongoose.Schema({
         required: false,
     },
     
-    // firstName:{
-    //     type: String,
-    //     required: true
-    // },
-    // lastName:{
-    //     type: String,
-    //     required: false
-    // },
+  
     otherInfo:{
         type: String,
         required: false
